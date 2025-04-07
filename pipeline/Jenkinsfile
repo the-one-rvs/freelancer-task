@@ -11,7 +11,7 @@ pipeline {
         stage('Github Repo') {
             steps {
                 echo 'Pulling the project from Github...'
-                git changelog: false, poll: false, url: 'https://github.com/the-one-rvs/DevSecOps-Pipeline.git'
+                git changelog: false, poll: false, url: 'https://github.com/the-one-rvs/freelancer-task.git'
             }
         }
 
