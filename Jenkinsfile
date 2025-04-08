@@ -75,7 +75,7 @@ pipeline {
             echo 'Removing Docker Image from local...'
             script {
                 def buildNumber = env.BUILD_NUMBER
-                sh "docker rmi quasarcelestio/devsecops:0.1.${buildNumber}"
+                sh "docker rmi quasarcelestio/quasarcelestio/task-freelancer:0.1.${buildNumber}"
             }
         }
     }
