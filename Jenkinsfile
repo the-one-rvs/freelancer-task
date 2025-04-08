@@ -20,7 +20,7 @@ pipeline {
                 script {
                     echo 'Building Docker Image...'
                     def buildNumber = env.BUILD_NUMBER
-                    sh "docker build -t quasarcelestio/task-freelancer:0.1.${buildNumber} ."
+                    sh "docker build -t quasarcelestio/task-freelancer:0.1.${buildNumber} pipeline/app"
                 }
             }
         }
@@ -54,6 +54,7 @@ pipeline {
                 script {
                     def buildNumber = env.BUILD_NUMBER
                     sh """
+                        cd pipeline
                         chmod 400 k8s-key.pem
                         chmod +x docker-install.sh
                         ssh -o StrictHostKeyChecking=no -i k8s-key.pem ${Instance} '
